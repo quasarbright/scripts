@@ -1,0 +1,14 @@
+#! /bin/fish
+
+if not set -q argv[1]
+	echo "must provide path of encrypted file"
+	exit 1
+end
+
+set tmp (mktemp)
+trap 'rm $tmp' EXIT
+
+read -s -P "password: " password
+and gpg --yes --pinentry-mode loopback --passphrase $password -d --no-symkey-cache -o $tmp $argv[1] < /dev/null
+and vim $tmp
+and gpg --yes --pinentry-mode loopback --passphrase $password -c --no-symkey-cache -o $argv[1] $tmp < /dev/null

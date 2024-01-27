@@ -1,3 +1,8 @@
 #! /bin/fish
 
+if not set -q argv[1]
+	echo "must provide path of file to zip and encrypt"
+	exit 1
+end
+
 tar cz $argv[1] | gpg -c --no-symkey-cache -o $argv[1].tar.gz.gpg
