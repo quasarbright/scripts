@@ -1,0 +1,3 @@
+#! /bin/fish
+
+tar cz $argv[1] | gpg -c --no-symkey-cache -o $argv[1].tar.gz.gpg

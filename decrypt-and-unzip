@@ -1,0 +1,3 @@
+#! /bin/fish
+
+gpg -d --no-symkey-cache -o - $argv[1] | tar xz
