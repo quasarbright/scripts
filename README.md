@@ -15,7 +15,7 @@ $ edit-encrypted secret.md.gpg
 ```
 enter the password and then once vim opens, edit your secret stuff in the file and then save and exit. this will edit `secret.md.gpg`
 
-The unencrypted text only ever exists in a temporary file that gets deleted once the editing is done. (the temporary file is created in `/tmp` as per `maketemp`.
+The unencrypted text only ever exists in a temporary file that gets deleted once the editing is done. (the temporary file is created with `mktemp`)
 
 # zip-and-encrypt, decrypt-and-unzip
 

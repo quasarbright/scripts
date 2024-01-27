@@ -1,4 +1,4 @@
-#! /bin/fish
+#! /usr/bin/env fish
 
 if not set -q argv[1]
 	echo "must provide path of encrypted file"
